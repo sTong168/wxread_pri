@@ -19,11 +19,15 @@ COOKIE_DATA = {"rq": "%2Fweb%2Fbook%2Fread"}
 # 每一次代表30秒，比如你想刷1个小时这里填120，你只需要签到这里填2次
 env_headers = os.getenv('WXREAD_HEADERS')
 env_cookies = os.getenv('WXREAD_COOKIES')
-env_num = os.getenv('READ_NUM')
-env_method = os.getenv('PUSH_METHOD')
+# env_num = os.getenv('READ_NUM')
+env_num = 60
+# env_method = os.getenv('PUSH_METHOD')
+env_method = "pushplus"
 
-headers = json.loads(json.dumps(eval(env_headers))) if env_headers else local_headers
-cookies = json.loads(json.dumps(eval(env_cookies))) if env_cookies else local_cookies
+# headers = json.loads(json.dumps(eval(env_headers))) if env_headers else local_headers
+# cookies = json.loads(json.dumps(eval(env_cookies))) if env_cookies else local_cookies
+headers = local_headers
+cookies = local_cookies
 number = int(env_num) if env_num not in (None, '') else 120
 
 
